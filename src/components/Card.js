@@ -4,30 +4,37 @@ import React from 'react'
 export default function Card(props) {
   return (
     <>
-        <div class="card">
+        <div className="card">
             <img 
             src={props.URL} 
-            class="card-img-top" alt="card img"
+            className="card-img-top" alt="card img"
             />
-            <div class="card-body">
-                <p class="card-text">{props.title}</p>
+            <div className="card-body">
+                <p className="card-text">{props.title}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </>
   )
 }
+
+
+
+
+
+
 // destructuring object (props)
 export function Cardd(props) {
     const {URll,titlee} = props
     return (
       <>
-          <div class="card">
+          <div className="card">
               <img 
               src={URll} 
-              class="card-img-top" alt="card img"
+              className="card-img-top" alt="card img"
               />
-              <div class="card-body">
-                  <p class="card-text">{titlee}</p>
+              <div className="card-body">
+                  <p className="card-text">{titlee}</p>
               </div>
           </div>
           {/* <h1>Hello</h1> */}
