@@ -7,7 +7,7 @@ export default function Card(props) {
         <div className="card">
             <img 
             src={props.URL} 
-            className="card-img-top" alt="card img"
+            className="card-img-top" alt="card-img"
             />
             <div className="card-body">
                 <p className="card-text">{props.title}</p>

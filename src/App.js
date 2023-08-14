@@ -5,16 +5,23 @@ import { products } from './data/products';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { Route, Routes } from 'react-router-dom';
+import ProductForm from './components/ProductForm';
+import About from './pages/About';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   console.log(products)
   return (
     <>
-    <div className='container'>
-      <Navbar/>
-      <Home/>
-      <Footer/>
-    </div>
+    <Navbar/>
+    <Routes>
+    <Route path='/' element={<Home />} />
+        <Route path='/about-us' element={<About />} />
+        <Route path='/create' element={<ProductForm />} />
+        <Route path='/datatable' element={<Dashboard/>}/>
+    </Routes>
+    <Footer/>
     </>
 
   );

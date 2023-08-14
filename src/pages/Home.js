@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../components/Card'
 import LoadingView from '../components/LoadingView'
+import { fetchProducts } from '../services/productAction'
 
 // rfc = react funcitonal component 
 export default function Home() {
@@ -10,14 +11,6 @@ export default function Home() {
 
     // [] = called as array
     const [products, setProduct] = useState([])
-    const fetchProducts = () =>{
-        fetch('https://api.escuelajs.co/api/v1/products?limit=12&offset=0')
-        .then(res => res.json())
-        .then(resp =>{
-          setProduct(resp)
-          setLoading(false)
-        } )
-    }
     // const for loading
     const [isLoaing, setLoading] = useState(true)
   
@@ -25,6 +18,11 @@ export default function Home() {
     useEffect(() => {
         // called api
         fetchProducts()
+        .then(res =>{
+          setLoading(false)
+          setProduct(res)
+        } )
+        
     }, [])
 
     
